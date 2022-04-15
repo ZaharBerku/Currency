@@ -1,0 +1,152 @@
+@import "../../style/mixins.scss";
+@import "../../style/variables.scss";
+@import "../../style/function.scss";
+
+.main{
+    background-color:  #F0F0F0;
+    padding-top:  adaptiv-indentation(30,102,320);
+    padding-bottom: 302px;
+    &__title_text{
+        font-weight: 600;
+        @include adaptiv-font(32, 26);
+        line-height: 54px;
+        color: $primary-color;
+    };
+    &__container{
+        @include flex-container;
+        gap: adaptiv-indentation(30,47,993);
+    };
+    &__currency{
+        @include flex-container;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 8px rgba(70, 21, 167, 0.12);
+        border-radius: 21px;
+        padding: adaptiv-indentation(20,40,993);
+        column-gap: adaptiv-indentation(15,40,993);
+    };
+    &__input_and_select{
+        display: flex;
+        flex-direction: column;
+        gap: 23px;   
+    };
+    &__input{
+        box-shadow: 0px 4px 4px #E5E5E5;
+        border-radius: 13px;
+        padding:7px adaptiv-indentation(38,50,993);
+        border: 2px solid transparent;
+        &:focus-visible,
+        &:focus{
+            outline: 0;
+            border: 2px solid $primary-color;
+        };
+        &:hover{
+            box-shadow: 0px 0px 4px ;
+        };
+        &:active{
+            box-shadow: inset 0px 0px 4px;
+        };
+    };
+    &__img{
+        max-height: adaptiv-indentation(220,300,993);
+    };
+    &__btn_reverse{
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px #E5E5E5;
+        border-radius: 13px;
+        border:none;
+        @include flex-container;
+        padding: adaptiv-indentation(8,10,993);
+        &:hover{
+            box-shadow: 0px 0px 4px ;
+        };
+        &:active{
+            box-shadow: inset 0px 0px 4px;
+        };
+    };
+    @include phone{
+        background-color:  #F0F0F0;
+        padding-bottom: 302px;
+        &__title_text{
+            font-weight: 600;
+            @include adaptiv-font(32, 26);
+            line-height: 54px;
+            color: $primary-color;
+        };
+        &__container{
+            @include flex-container;
+            gap: 87px;
+        };
+        &__currency{
+            @include flex-container;
+            flex-direction: column;
+            gap: 20px;
+        };
+        &__input_and_select{
+            display: flex;
+            flex-direction: column;
+            gap: 23px;   
+        };
+        &__input{
+            box-shadow: 0px 4px 4px #E5E5E5;
+            border-radius: 13px;
+            padding:7px 38px;
+            border: 2px solid transparent;
+            &:focus-visible,
+            &:focus{
+                outline: 0;
+                border: 2px solid $primary-color;
+            };
+            &:hover{
+                box-shadow: 0px 0px 4px ;
+            };
+            &:active{
+                box-shadow: inset 0px 0px 4px;
+            };
+        };
+        &__img{
+            display: none
+        };
+        &__btn_reverse{
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px #E5E5E5;
+            border-radius: 13px;
+            border:none;
+            @include flex-container;
+            &:hover{
+                box-shadow: 0px 0px 4px ;
+            };
+            &:active{
+                box-shadow: inset 0px 0px 4px;
+            };
+        }; 
+    };
+    @include tablet{
+        &__img{
+            display: none;
+        };
+        &__currency{
+            @include flex-container;
+            flex-direction: column;
+            gap: 20px;
+        };
+    };
+    // @include desktop{
+    //     &__container{
+    //         @include flex-container;
+    //         gap: 87px;
+    //     };
+    //     &__currency{
+    //         padding: 50px;
+    //         column-gap: 50px;
+    //     };
+    //     &__img{
+    //         max-height: 350px;
+    //     };
+    //     &__btn_reverse{
+    //         padding: 18px
+    //     };
+    //     &__input{
+    //         padding: 7px 68px;
+    //     };
+    // };
+};

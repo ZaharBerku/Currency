@@ -1,0 +1,32 @@
+@import "~normalize-css";
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap');
+@import "./variables.scss";
+
+
+
+body{
+    font-family: 'Istok Web', sans-serif;
+};
+
+li{
+    list-style-type: none;
+};
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+};
+
+.container{
+    max-width: 1512px;
+    margin: 0 auto;
+};
+.css-wqq7bk-control{
+    border: 2px solid transparent;
+    &:focus-visible,
+        &:focus{
+            outline: 0;
+            border: 2px solid $primary-color;
+        }
+}
+

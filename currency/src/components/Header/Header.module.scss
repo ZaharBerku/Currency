@@ -1,0 +1,305 @@
+@import  "../../style/mixins.scss";
+@import "../../style/variables.scss";
+@import "../../style/function.scss";
+
+
+.header{
+    &__nav{
+        @include flex-container;
+        justify-content: space-between;
+        padding: 0px adaptiv-indentation(10, 20, 320);
+        background: #FFFFFF;
+        box-shadow: 0px 6px 10px rgba(229, 229, 229, 0.44);
+    };
+    .nav{
+        &__title{
+            @include flex-container;
+            gap:24px;
+        };
+        &__title_svg{
+            margin-top: -5px;
+            cursor: pointer;
+        };
+        &__title_text{
+            font-weight: 400;
+            @include adaptiv-font(42, 30);
+            line-height: 61px;
+            color:$secondery-color;
+            cursor: pointer;
+        };
+        &__list{
+            @include flex-container;
+            gap:37px;
+            li{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 23px;
+                color:$secondery-color;
+            };
+        };
+        &__cuurrency{
+            @include flex-container;
+            gap:46px;
+            p{
+                @include flex-container;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 23px;
+                color:$secondery-color;
+                padding-bottom: 9px;
+                border-bottom: 1px solid $primary-color;
+            };
+        };
+        &__container_btn{
+            border-left: 1px solid $primary-color;
+            padding: 15px 0px 15px 46px;
+        };
+        &__btn_list{
+            display: none;    
+        };
+        &__burgger_line{
+            display: none;
+        };
+        &__btn{
+            background: $primary-color;
+            border-radius: 21px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 23px;
+            color: #fff;
+            padding: 13px 66px;
+            border: none;
+            &:hover{
+                background: #39118a;
+            };
+            &:active{
+                background: #290c63;
+                box-shadow: inset 0px 0px 5px
+            };
+        };
+    };
+    @include phone{
+        .nav{
+            position: relative;
+            &__title{
+                @include flex-container;
+                gap:24px;
+            };
+            &__list{
+                @include flex-container;
+                flex-direction: column;
+                z-index: 2;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                background-color: #fff;
+                padding: 0px;
+                left: 0px;
+                top: 0px;
+                order: 3;
+                gap:37px;
+                display: none;
+                li{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 23px;
+                    color:$secondery-color;
+                };
+            };
+            &__cuurrency{
+                display: none;
+            };
+            &__container_btn{
+                border-left: 1px solid transparent;
+            }
+            &__btn_list{
+                background: $primary-color;
+                border-radius: 21px;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 23px;
+                color: #fff;
+                padding: 13px 66px;
+                border: none;
+                display: block;
+                &:hover{
+                    background: #39118a;
+                };
+                &:active{
+                    background: #290c63;
+                    box-shadow: inset 0px 0px 5px
+                };
+            };
+            &__btn{
+              font-size: 0px;
+              background: #fff;
+              border-radius: 2px;
+              padding: 0px;
+              width: 25px;
+              height: 25px;
+              border: none;
+              position: relative;
+              z-index: 5;
+              &::before,
+              &::after,
+              span{
+                content: '';
+                transition: all .2s ease;
+                position: absolute;
+                display: block;
+                height: 2px;
+                border-radius: 2px;
+                width: 100%;
+                background: $secondery-color;
+                };
+                &:hover{
+                    background: #fff;
+                };
+                &:active{
+                    background: #fff;
+                    box-shadow: inset 0px 0px 0px;
+                };
+              
+              &::before{
+                top: 0px;
+              };
+              &::after{
+                top: 8px;
+              };
+              span{
+                top: 16px;
+                
+              };
+            };
+            &__open_burger_btn{
+                &::before{
+                    top: 0px;
+                    transform: rotate(45deg);
+                  };
+                  &::after{
+                    top: 0px;
+                    transform: rotate(-45deg);
+                  };
+                  span{
+                    top: 16px;
+                    transform: scale(0);
+                  };
+            };
+            &__open_burger{
+                display: flex;
+            };
+        };
+    };
+    @include tablet{
+        .nav{
+            position: relative;
+            &__title{
+                @include flex-container;
+                gap:24px;
+            };
+            &__list{
+                @include flex-container;
+                flex-direction: column;
+                z-index: 2;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                background-color: #fff;
+                padding: 0px;
+                left: 0px;
+                top: 0px;
+                order: 3;
+                gap:37px;
+                display: none;
+                li{
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 23px;
+                    color:$secondery-color;
+                };
+            };
+            &__cuurrency{
+                display: flex;
+            };
+            &__container_btn{
+                border-left: 1px solid transparent;
+            }
+            &__btn_list{
+                background: $primary-color;
+                border-radius: 21px;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 23px;
+                color: #fff;
+                padding: 13px 66px;
+                border: none;
+                display: block;
+                &:hover{
+                    background: #39118a;
+                };
+                &:active{
+                    background: #290c63;
+                    box-shadow: inset 0px 0px 5px
+                };
+            };
+            &__btn{
+              font-size: 0px;
+              background: #fff;
+              border-radius: 2px;
+              padding: 0px;
+              width: 25px;
+              height: 25px;
+              border: none;
+              position: relative;
+              z-index: 5;
+              &::before,
+              &::after,
+              span{
+                content: '';
+                transition: all .2s ease;
+                position: absolute;
+                display: block;
+                height: 2px;
+                border-radius: 2px;
+                width: 100%;
+                background: $secondery-color;
+                };
+                &:hover{
+                    background: #fff;
+                };
+                &:active{
+                    background: #fff;
+                    box-shadow: inset 0px 0px 0px;
+                };
+              
+              &::before{
+                top: 0px;
+              };
+              &::after{
+                top: 8px;
+              };
+              span{
+                top: 16px;
+                
+              };
+            };
+            &__open_burger_btn{
+                &::before{
+                    top: 0px;
+                    transform: rotate(45deg);
+                  };
+                  &::after{
+                    top: 0px;
+                    transform: rotate(-45deg);
+                  };
+                  span{
+                    top: 16px;
+                    transform: scale(0);
+                  };
+            };
+            &__open_burger{
+                display: flex;
+            };
+        };
+    };
+};
