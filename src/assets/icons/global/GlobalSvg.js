@@ -59,4 +59,4 @@ GlobalSvg.propTypes = {
     type: PropTypes.string.isRequired
 };
 
-export default GlobalSvg;
+export { GlobalSvg };

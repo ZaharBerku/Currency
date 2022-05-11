@@ -13,7 +13,6 @@ const initialState = {
     base_ccy:"UAH",
 };
 
-
 const selectReducer = (state = initialState, actions) => {
 
     const { type, payload } = actions;
@@ -44,4 +43,5 @@ const selectReducer = (state = initialState, actions) => {
             return state;
     }
 };
-export default selectReducer;
+
+export { selectReducer };

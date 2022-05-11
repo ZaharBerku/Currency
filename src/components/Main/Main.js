@@ -1,44 +1,38 @@
 import React from "react";
-import styles from "./Main.module.scss";
-import Input from "../Input";
-import Button from "../Button";
-import Select from "react-select";
-import { colourStyles } from "../../data";
-import createActions  from "../../store/createActions";
-import actions from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import Select from "react-select";
+import styles from "./Main.module.scss";
+import { Input } from "../Input";
+import { Button } from "../Button";
+import { colourStyles } from "../../data";
+import { FILTER_OPTIONS_SELECT_FIRST, FILTER_OPTIONS_SELECT_SECOND } from "../../store/actions";
 import bigBoss from "../../assets/images/big-boss.png";
-import GlobalSvg from "../../assets/icons/global/GlobalSvg";
+import { GlobalSvg } from "../../assets/icons/global/GlobalSvg";
+import {
+    getBaseCcy, 
+    getCcy, 
+    getValueInput, 
+    changeInputValue, 
+    filterOptions, 
+    reverseValueInputs,
+    reverseValueSelect }  from "../../store/createActions";
 
 
 
 
 const Main = () => {
     const dispatch = useDispatch();
-    const { input, select, currency:{data} } = useSelector(state => state);
-    const {valueInputFirst, valueInputSecond, isDisable} = input;
-    const { optionsSelectFirst, optionsSelectSecond, ccy, base_ccy } = select;
-    
-    const { 
-        getBaseCcy, 
-        getCcy, 
-        getValueInput, 
-        changeInputValue, 
-        filterOptions, 
-        reverseValueInputs,
-        reverseValueSelect } = createActions;
-
-
-    const { FILTER_OPTIONS_SELECT_FIRST, FILTER_OPTIONS_SELECT_SECOND } = actions;
-
+    const { data } = useSelector(state => state.currency);
+    const {valueInputFirst, valueInputSecond, isDisable} = useSelector(state => state.input);
+    const { optionsSelectFirst, optionsSelectSecond, ccy, base_ccy } = useSelector(state => state.select);
 
     return (
         <main className={styles.main}>
-            <div className={styles.main__container}>
+            <div className={styles.mainContainer}>
                 <div>
-                    <h1 className={styles.main__title_text}>Instant currency exchange</h1>
-                    <div className={styles.main__currency}>
-                        <div className={styles.main__input_and_select}>
+                    <h1 className={styles.mainTitleText}>Instant currency exchange</h1>
+                    <div className={styles.mainCurrency}>
+                        <div className={styles.mainInputAndSelect}>
                             <Select
                                 value={{ value: ccy, label: ccy }}
                                 styles={colourStyles}
@@ -71,13 +65,13 @@ const Main = () => {
                                         }
                                     ));  
                                 }}
-                                additionalClassNames={styles.main__input}
+                                additionalClassNames={styles.mainInput}
                                 placeholder={"0,000"} />
                         </div>
 
 
                         <Button 
-                        additionalClassNames={styles.main__btn_reverse}
+                        additionalClassNames={styles.mainBtnReverse}
                         handelClick={()=> {
                             dispatch(reverseValueInputs());
                             dispatch(reverseValueSelect());
@@ -88,7 +82,7 @@ const Main = () => {
                         </Button>
 
 
-                        <div className={styles.main__input_and_select}>
+                        <div className={styles.mainInputAndSelect}>
                             <Select
                                 value={{ value: base_ccy, label: base_ccy }}
                                 styles={colourStyles}
@@ -122,16 +116,16 @@ const Main = () => {
                                         }
                                     ));
                                 }}
-                                additionalClassNames={styles.main__input}
+                                additionalClassNames={styles.mainInput}
                                 placeholder={"0,000"} />
                         </div>
                     </div>
                 </div>
-                <img className={styles.main__img} src={bigBoss} alt="big-boss" />
+                <img className={styles.mainImg} src={bigBoss} alt="big-boss" />
             </div>
         </main>
     );
 };
 
 
-export default Main;
+export { Main };

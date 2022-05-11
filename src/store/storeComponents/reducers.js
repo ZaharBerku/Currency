@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import selectReducer from "./select/selectReducer";
-import inputReducer from "./input/inputReducer";
-import headerReducer from "./header/headerReducer";
-import currencyReducer from "./currency/currencyReducer";
+import { selectReducer } from "./select/selectReducer";
+import { inputReducer } from "./input/inputReducer";
+import { headerReducer } from "./header/headerReducer";
+import { currencyReducer } from "./currency/currencyReducer";
 
 const reducers = combineReducers({
     select: selectReducer,
@@ -11,4 +11,4 @@ const reducers = combineReducers({
     input: inputReducer,
 });
 
-export default reducers;
+export { reducers };

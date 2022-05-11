@@ -1,8 +1,8 @@
 import { GET_DATA_CURRENCY } from "./currencyActions";
+
 const initialState = {
     data: [],
 };
-
 
 const currencyReducer = (state = initialState, actions) => {
     const { type, payload } = actions;
@@ -13,4 +13,5 @@ const currencyReducer = (state = initialState, actions) => {
             return state;
     }
 };
-export default currencyReducer;
+
+export { currencyReducer };

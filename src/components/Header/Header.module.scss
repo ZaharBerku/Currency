@@ -4,7 +4,7 @@
 
 
 .header{
-    &__nav{
+    &Nav{
         @include flex-container;
         justify-content: space-between;
         padding: 0px adaptiv-indentation(10, 20, 320);
@@ -12,22 +12,22 @@
         box-shadow: 0px 6px 10px rgba(229, 229, 229, 0.44);
     };
     .nav{
-        &__title{
+        &Title{
             @include flex-container;
             gap:24px;
         };
-        &__title_svg{
+        &TitleSvg{
             margin-top: -5px;
             cursor: pointer;
         };
-        &__title_text{
+        &TitleText{
             font-weight: 400;
             @include adaptiv-font(42, 30);
             line-height: 61px;
             color:$secondery-color;
             cursor: pointer;
         };
-        &__list{
+        &List{
             @include flex-container;
             gap:37px;
             li{
@@ -37,7 +37,7 @@
                 color:$secondery-color;
             };
         };
-        &__cuurrency{
+        &Cuurrency{
             @include flex-container;
             gap:46px;
             p{
@@ -50,17 +50,17 @@
                 border-bottom: 1px solid $primary-color;
             };
         };
-        &__container_btn{
+        &ContainerBtn{
             border-left: 1px solid $primary-color;
             padding: 15px 0px 15px 46px;
         };
-        &__btn_list{
+        &BtnList{
             display: none;    
         };
-        &__burgger_line{
+        &BurggerLine{
             display: none;
         };
-        &__btn{
+        &Btn{
             background: $primary-color;
             border-radius: 21px;
             font-weight: 700;
@@ -81,11 +81,11 @@
     @include phone{
         .nav{
             position: relative;
-            &__title{
+            &Title{
                 @include flex-container;
                 gap:24px;
             };
-            &__list{
+            &List{
                 @include flex-container;
                 flex-direction: column;
                 z-index: 2;
@@ -106,13 +106,13 @@
                     color:$secondery-color;
                 };
             };
-            &__cuurrency{
+            &Cuurrency{
                 display: none;
             };
-            &__container_btn{
+            &ContainetBtn{
                 border-left: 1px solid transparent;
             }
-            &__btn_list{
+            &BtnList{
                 background: $primary-color;
                 border-radius: 21px;
                 font-weight: 700;
@@ -130,7 +130,7 @@
                     box-shadow: inset 0px 0px 5px
                 };
             };
-            &__btn{
+            &Btn{
               font-size: 0px;
               background: #fff;
               border-radius: 2px;
@@ -171,7 +171,7 @@
                 
               };
             };
-            &__open_burger_btn{
+            &OpenBurgerBtn{
                 &::before{
                     top: 0px;
                     transform: rotate(45deg);
@@ -185,7 +185,7 @@
                     transform: scale(0);
                   };
             };
-            &__open_burger{
+            &OpenBurger{
                 display: flex;
             };
         };
@@ -193,11 +193,11 @@
     @include tablet{
         .nav{
             position: relative;
-            &__title{
+            &Title{
                 @include flex-container;
                 gap:24px;
             };
-            &__list{
+            &List{
                 @include flex-container;
                 flex-direction: column;
                 z-index: 2;
@@ -218,13 +218,13 @@
                     color:$secondery-color;
                 };
             };
-            &__cuurrency{
+            &Cuurrency{
                 display: flex;
             };
-            &__container_btn{
+            &ContainerBtn{
                 border-left: 1px solid transparent;
             }
-            &__btn_list{
+            &BtnList{
                 background: $primary-color;
                 border-radius: 21px;
                 font-weight: 700;
@@ -242,7 +242,7 @@
                     box-shadow: inset 0px 0px 5px
                 };
             };
-            &__btn{
+            &Btn{
               font-size: 0px;
               background: #fff;
               border-radius: 2px;
@@ -283,7 +283,7 @@
                 
               };
             };
-            &__open_burger_btn{
+            &OpenBurgerBtn{
                 &::before{
                     top: 0px;
                     transform: rotate(45deg);
@@ -297,7 +297,7 @@
                     transform: scale(0);
                   };
             };
-            &__open_burger{
+            &OpenBurger{
                 display: flex;
             };
         };

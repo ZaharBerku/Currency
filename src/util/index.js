@@ -2,4 +2,4 @@ import { findCcy } from "./findCcy";
 
 
 
-export {findCcy};
+export { findCcy };

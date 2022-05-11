@@ -1,7 +1,6 @@
 import { GET_OPTIONS, REVERSE_VALUE_SELECT, GET_CCY, GET_BASE_CCY } from "./selectActions";
 
 
-
 export const getOptions = (payload) => ({type:GET_OPTIONS, payload});
 
 export const filterOptions = (type, payload) => ({type, payload});

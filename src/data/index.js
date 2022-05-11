@@ -1,7 +1,6 @@
 const EUR = "EUR";
 const USD = "USD";
 
-
 ///HEADER
 export const dataHeader = {
     nav:[
@@ -33,8 +32,6 @@ export const options = [
     { value: "EUR", label: "EUR" }
   ];
 
-
-  
 export const colourStyles = {
     control: (styles) => ({
         ...styles,

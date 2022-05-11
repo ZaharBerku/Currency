@@ -1,1 +1,1 @@
-export {default} from "./Input";
+export { memoInput as Input } from "./Input";

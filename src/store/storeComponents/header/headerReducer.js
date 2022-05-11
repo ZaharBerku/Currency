@@ -1,10 +1,8 @@
 import {GET_DATA_HEADER} from "./headerActions";
 
-
 const initialState = {
     header:{},
 };
-
 
 const headerReducer = (state = initialState, actions) => {
     const { type, payload } = actions;
@@ -15,4 +13,5 @@ const headerReducer = (state = initialState, actions) => {
             return state;
     }
 };
-export default headerReducer;
+
+export { headerReducer };

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -20,7 +19,7 @@ Input.defaultProps = {
     placeholder:"",
 };
 
-Input.protoTypes = {
+Input.propTypes = {
     isDisable: PropTypes.bool,
     value: PropTypes.string.isRequired,
     handelInput: PropTypes.func,
@@ -29,4 +28,6 @@ Input.protoTypes = {
     placeholder: PropTypes.string,
 };
 
-export default React.memo(Input);
+const memoInput = React.memo(Input);
+
+export { memoInput };

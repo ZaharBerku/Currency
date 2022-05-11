@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -12,13 +11,19 @@ const Button = (props) => {
 Button.defaultProps = {
     handelClick:()=>{},
     additionalClassNames:"",
+    children:null,
+    text:null
 };
 
-Button.protoTypes = {
-    text: PropTypes.string.isRequired,
+Button.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]),
+    text: PropTypes.string,
     handelClick: PropTypes.func,
     additionalClassNames: PropTypes.string,
 };
 
 
-export default Button;
+export { Button };

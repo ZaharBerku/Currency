@@ -6,17 +6,17 @@
     background-color:  #F0F0F0;
     padding-top:  adaptiv-indentation(30,102,320);
     padding-bottom: 302px;
-    &__title_text{
+    &TitleText{
         font-weight: 600;
         @include adaptiv-font(32, 26);
         line-height: 54px;
         color: $primary-color;
     };
-    &__container{
+    &Container{
         @include flex-container;
         gap: adaptiv-indentation(30,47,993);
     };
-    &__currency{
+    &Currency{
         @include flex-container;
         background: #FFFFFF;
         box-shadow: 4px 4px 8px rgba(70, 21, 167, 0.12);
@@ -24,12 +24,12 @@
         padding: adaptiv-indentation(20,40,993);
         column-gap: adaptiv-indentation(15,40,993);
     };
-    &__input_and_select{
+    &InputAndSelect{
         display: flex;
         flex-direction: column;
         gap: 23px;   
     };
-    &__input{
+    &Input{
         box-shadow: 0px 4px 4px #E5E5E5;
         border-radius: 13px;
         padding:7px adaptiv-indentation(38,50,993);
@@ -46,10 +46,10 @@
             box-shadow: inset 0px 0px 4px;
         };
     };
-    &__img{
+    &Img{
         max-height: adaptiv-indentation(220,300,993);
     };
-    &__btn_reverse{
+    &BtnReverse{
         background: #FFFFFF;
         box-shadow: 0px 4px 4px #E5E5E5;
         border-radius: 13px;
@@ -66,27 +66,27 @@
     @include phone{
         background-color:  #F0F0F0;
         padding-bottom: 302px;
-        &__title_text{
+        &TitleText{
             font-weight: 600;
             @include adaptiv-font(32, 26);
             line-height: 54px;
             color: $primary-color;
         };
-        &__container{
+        &Container{
             @include flex-container;
             gap: 87px;
         };
-        &__currency{
+        &Currency{
             @include flex-container;
             flex-direction: column;
             gap: 20px;
         };
-        &__input_and_select{
+        &InputAndSelect{
             display: flex;
             flex-direction: column;
             gap: 23px;   
         };
-        &__input{
+        &Input{
             box-shadow: 0px 4px 4px #E5E5E5;
             border-radius: 13px;
             padding:7px 38px;
@@ -103,10 +103,10 @@
                 box-shadow: inset 0px 0px 4px;
             };
         };
-        &__img{
+        &Img{
             display: none
         };
-        &__btn_reverse{
+        &BtnReverse{
             background: #FFFFFF;
             box-shadow: 0px 4px 4px #E5E5E5;
             border-radius: 13px;
@@ -121,32 +121,13 @@
         }; 
     };
     @include tablet{
-        &__img{
+        &Img{
             display: none;
         };
-        &__currency{
+        &Currency{
             @include flex-container;
             flex-direction: column;
             gap: 20px;
         };
     };
-    // @include desktop{
-    //     &__container{
-    //         @include flex-container;
-    //         gap: 87px;
-    //     };
-    //     &__currency{
-    //         padding: 50px;
-    //         column-gap: 50px;
-    //     };
-    //     &__img{
-    //         max-height: 350px;
-    //     };
-    //     &__btn_reverse{
-    //         padding: 18px
-    //     };
-    //     &__input{
-    //         padding: 7px 68px;
-    //     };
-    // };
 };

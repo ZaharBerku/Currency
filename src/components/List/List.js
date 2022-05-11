@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -10,8 +9,8 @@ const List = (props) => {
 };
 
 
-List.protoTypes = {
+List.propTypes = {
     text: PropTypes.string
 };
 
-export default List;
+export { List };

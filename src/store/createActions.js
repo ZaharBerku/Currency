@@ -1,3 +1,21 @@
-import * as createActions from "./storeComponents/createActions";
+export {
+      //SELECT
+  getOptions,
+  filterOptions,
+  reverseValueSelect,
+  getCcy,
+  getBaseCcy,
+  
+  //INPUT
+  changeInputValue,
+  getValueInput,
+  isDisableInput,
+  reverseValueInputs,
 
-export default createActions;
+  //CURRENCY
+  getDataCurrency,
+
+  //HEADER 
+  getDataHeader
+} from "./storeComponents/createActions";
+

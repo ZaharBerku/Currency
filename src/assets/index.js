@@ -1,3 +1,3 @@
-import GlobalSvg from "./icons/global/GlobalSvg";
+import { GlobalSvg } from "./icons/global/GlobalSvg";
 
-export {GlobalSvg};
+export { GlobalSvg };

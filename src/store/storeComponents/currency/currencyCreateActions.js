@@ -1,8 +1,6 @@
 import { findCcy } from "../../../util";
 import { GET_DATA_CURRENCY } from "./currencyActions";
 
-
-
 export const getDataCurrency = () => async (dispatch) => {
     const data = await fetch("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").then(res=>res.json());
     const usd = findCcy(data, "USD");
