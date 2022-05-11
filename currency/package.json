@@ -2,7 +2,7 @@
   "name": "currency",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zaharberku.github.io/Currency/currency/",
+  "homepage": "https://zaharberku.github.io/Currency/",
   "dependencies": {
     "classnames": "^2.3.1",
     "cra-template": "1.1.3",
