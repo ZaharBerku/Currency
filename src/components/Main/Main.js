@@ -1,31 +1,25 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Select from "react-select";
 import styles from "./Main.module.scss";
 import { Input } from "../Input";
 import { Button } from "../Button";
 import { colourStyles } from "../../data";
+import { selectors } from "../../store/selectors";
 import { FILTER_OPTIONS_SELECT_FIRST, FILTER_OPTIONS_SELECT_SECOND } from "../../store/actions";
 import bigBoss from "../../assets/images/big-boss.png";
 import { GlobalSvg } from "../../assets/icons/global/GlobalSvg";
-import {
-    getBaseCcy, 
-    getCcy, 
-    getValueInput, 
-    changeInputValue, 
-    filterOptions, 
-    reverseValueInputs,
-    reverseValueSelect }  from "../../store/createActions";
-
+import { useCreateActions } from "../../hooks/useCreateActions";
+import { createActions }  from "../../store/createActions";
 
 
 
 const Main = () => {
-    const dispatch = useDispatch();
-    const { data } = useSelector(state => state.currency);
-    const {valueInputFirst, valueInputSecond, isDisable} = useSelector(state => state.input);
-    const { optionsSelectFirst, optionsSelectSecond, ccy, base_ccy } = useSelector(state => state.select);
-
+    const { data } = useSelector(selectors.currency);
+    const {valueInputFirst, valueInputSecond, isDisable} = useSelector(selectors.input);
+    const { optionsSelectFirst, optionsSelectSecond, ccy, base_ccy } = useSelector(selectors.select);
+    const { getValueInput, getCcy, changeInputValue, filterOptions, reverseValueInputs, reverseValueSelect, getBaseCcy} = useCreateActions(createActions);
+    
     return (
         <main className={styles.main}>
             <div className={styles.mainContainer}>
@@ -38,15 +32,15 @@ const Main = () => {
                                 styles={colourStyles}
                                 options={optionsSelectFirst}
                                 onChange={({ value }) => {
-                                    dispatch(getCcy(value));
-                                    dispatch(changeInputValue({
+                                    getCcy(value);
+                                    changeInputValue({
                                         currency:data,
                                         nameFirst: "valueInputFirst",
                                         nameSecond: "valueInputSecond",
                                         ccy,
                                         base_ccy
-                                    }));
-                                    dispatch(filterOptions(FILTER_OPTIONS_SELECT_SECOND, value));
+                                    });
+                                    filterOptions(FILTER_OPTIONS_SELECT_SECOND, value);
                                 }} />
 
                             <Input
@@ -54,8 +48,8 @@ const Main = () => {
                                 value={valueInputFirst}
                                 type={"number"}
                                 handelInput={({ target }) => {
-                                    dispatch(getValueInput({ name: "valueInputFirst", value: target.value }));
-                                    dispatch(changeInputValue(
+                                    getValueInput({ name: "valueInputFirst", value: target.value });
+                                    changeInputValue(
                                         {
                                             currency:data,
                                             nameFirst: "valueInputFirst",
@@ -63,7 +57,7 @@ const Main = () => {
                                             ccy,
                                             base_ccy
                                         }
-                                    ));  
+                                    );  
                                 }}
                                 additionalClassNames={styles.mainInput}
                                 placeholder={"0,000"} />
@@ -73,10 +67,10 @@ const Main = () => {
                         <Button 
                         additionalClassNames={styles.mainBtnReverse}
                         handelClick={()=> {
-                            dispatch(reverseValueInputs());
-                            dispatch(reverseValueSelect());
-                            dispatch(filterOptions(FILTER_OPTIONS_SELECT_FIRST, ccy));
-                            dispatch(filterOptions(FILTER_OPTIONS_SELECT_SECOND, base_ccy));
+                            reverseValueInputs();
+                            reverseValueSelect();
+                            filterOptions(FILTER_OPTIONS_SELECT_FIRST, ccy);
+                            filterOptions(FILTER_OPTIONS_SELECT_SECOND, base_ccy);
                         }}>
                             <GlobalSvg type={"arrowReverse"}/>
                         </Button>
@@ -88,15 +82,15 @@ const Main = () => {
                                 styles={colourStyles}
                                 options={optionsSelectSecond}
                                 onChange={({ value }) => {
-                                    dispatch(getBaseCcy(value));
-                                    dispatch(changeInputValue({
+                                    getBaseCcy(value);
+                                    changeInputValue({
                                         currency:data,
                                         nameFirst: "valueInputSecond",
                                         nameSecond: "valueInputFirst",
                                         ccy,
                                         base_ccy:value
-                                    }));
-                                    dispatch(filterOptions(FILTER_OPTIONS_SELECT_FIRST, value));
+                                    });
+                                    filterOptions(FILTER_OPTIONS_SELECT_FIRST, value);
                                 }} />
 
 
@@ -105,8 +99,8 @@ const Main = () => {
                                 value={valueInputSecond}
                                 type={"number"}
                                 handelInput={({ target }) => {
-                                    dispatch(getValueInput({ name: "valueInputSecond", value: target.value }));
-                                    dispatch(changeInputValue(
+                                    getValueInput({ name: "valueInputSecond", value: target.value });
+                                    changeInputValue(
                                         {
                                             currency:data,
                                             nameFirst: "valueInputSecond",
@@ -114,7 +108,7 @@ const Main = () => {
                                             ccy,
                                             base_ccy
                                         }
-                                    ));
+                                    );
                                 }}
                                 additionalClassNames={styles.mainInput}
                                 placeholder={"0,000"} />

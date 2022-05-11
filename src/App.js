@@ -1,22 +1,23 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Header, Main } from "./components";
 import { dataHeader, options } from "./data";
-import { getOptions, getDataHeader, getDataCurrency, filterOptions } from "./store/createActions";
+import { createActions } from "./store/createActions";
+import { useCreateActions } from "./hooks/useCreateActions";
 import { FILTER_OPTIONS_SELECT_FIRST, FILTER_OPTIONS_SELECT_SECOND } from "./store/actions";
 
 const App = () => {
-  const dispatch = useDispatch();
   const { ccy, base_ccy } = useSelector(state => state.select);
+  const { getOptions, getDataHeader, filterOptions, getDataCurrency } = useCreateActions(createActions);
 
   useEffect(() => {
-    dispatch(getOptions(options));
-    dispatch(getDataHeader(dataHeader));
-    dispatch(filterOptions(FILTER_OPTIONS_SELECT_FIRST, base_ccy));
-    dispatch(filterOptions(FILTER_OPTIONS_SELECT_SECOND, ccy));
+    getOptions(options);
+    getDataHeader(dataHeader);
+    filterOptions(FILTER_OPTIONS_SELECT_FIRST, base_ccy);
+    filterOptions(FILTER_OPTIONS_SELECT_SECOND, ccy);
 
     try {
-      dispatch(getDataCurrency());
+      getDataCurrency();
     } catch (err) {
       console.log(err);
     }

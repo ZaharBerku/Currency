@@ -5,14 +5,14 @@ import styles from "./Header.module.scss";
 import { GlobalSvg } from "../../assets";
 import { List } from "../List";
 import { Button } from "../Button";
+import { selectors } from "../../store/selectors";
 import { findCcy } from "../../util";
 
 const Header = () => {
     const [isDone, setIsDone] = useState(false);
-    const { header } = useSelector(state => state.header);
-    const { data } = useSelector(state => state.currency);
-    const {nav = [], nameSvg = "", btn = "", USD, EUR } = header;
-    
+    const {nav = [], nameSvg = "", btn = "", USD, EUR } = useSelector(selectors.header);
+    const { data } = useSelector(selectors.currency);
+
     const dataUSD = findCcy(data, USD);
     const dataEUR = findCcy(data, EUR);
 
