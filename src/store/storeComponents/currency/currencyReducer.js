@@ -4,7 +4,12 @@ const initialState = {
     data: [],
 };
 
-const currencyReducer = (state = initialState, actions) => {
+const initialActions = {
+    type: null, 
+    payload: null
+};
+
+const currencyReducer = (state = initialState, actions = initialActions) => {
     const { type, payload } = actions;
     switch (type) {
         case GET_DATA_CURRENCY:

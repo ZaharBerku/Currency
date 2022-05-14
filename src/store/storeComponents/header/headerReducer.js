@@ -4,7 +4,12 @@ const initialState = {
     header:{},
 };
 
-const headerReducer = (state = initialState, actions) => {
+const initialActions = {
+    type: null, 
+    payload: null
+};
+
+const headerReducer = (state = initialState, actions = initialActions) => {
     const { type, payload } = actions;
     switch (type) {
         case GET_DATA_HEADER:

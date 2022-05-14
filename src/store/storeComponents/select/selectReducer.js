@@ -13,11 +13,17 @@ const initialState = {
     base_ccy:"UAH",
 };
 
-const selectReducer = (state = initialState, actions) => {
+const initialActions = {
+    type: null,
+    payload: null
+};
+
+
+const selectReducer = (state = initialState, actions = initialActions) => {
 
     const { type, payload } = actions;
     const newOptions = [...state.options];
-    const filterOptions = newOptions.filter(element => element.value !== (payload));
+    const filterOptions = newOptions.filter(element => element.value !== payload);
 
 
     switch (type) {

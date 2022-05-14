@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Button = (props) => {
     const {text, handelClick, additionalClassNames, children} = props;
     return(
-        <button onClick={handelClick} className={additionalClassNames}>{text || children}</button>
+        <button data-testid="button" onClick={handelClick} className={additionalClassNames}>{text || children}</button>
     );
 };
 

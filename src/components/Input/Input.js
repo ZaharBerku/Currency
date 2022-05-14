@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Input = (props) => {
     const { isDisable, value, handelInput, additionalClassNames, type, placeholder } = props;
     return (
-        <input disabled={isDisable} value={value} placeholder={placeholder} type={type} onInput={handelInput} className={additionalClassNames}/>
+        <input data-testid="input" disabled={isDisable} value={value} placeholder={placeholder} type={type} onInput={handelInput} className={additionalClassNames}/>
     );
 };
 

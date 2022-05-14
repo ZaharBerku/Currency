@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot render should Header render 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <div
+      class="headerNav nav"
+    >
+      <div
+        class="navTitle"
+      >
+        <span
+          class="navTitleSvg"
+        />
+        <h1
+          class="navTitleText"
+        >
+          B-bank
+        </h1>
+      </div>
+      <ul
+        class="navList"
+      >
+        <button
+          class="navBtnList"
+          data-testid="button"
+        />
+      </ul>
+      <div
+        class="navCuurrency"
+      />
+      <div
+        class="navContainerBtn"
+      >
+        <button
+          class="navBtn"
+          data-testid="button"
+        >
+          <span
+            class="navBurggerLine"
+          />
+        </button>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

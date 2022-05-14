@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input snapshot render should Input render 1`] = `
+<DocumentFragment>
+  <input
+    class="active"
+    data-testid="input"
+    disabled=""
+    placeholder="text"
+    type="text"
+    value="input"
+  />
+</DocumentFragment>
+`;

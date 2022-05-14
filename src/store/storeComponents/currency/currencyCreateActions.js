@@ -21,6 +21,5 @@ export const getDataCurrency = () => async (dispatch) => {
         return element;
     });
     
-
     dispatch({type:GET_DATA_CURRENCY, payload:newData});
 };
